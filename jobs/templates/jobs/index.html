@@ -1,0 +1,23 @@
+{% extends "jobs/base.html" %}
+{% block content %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Company ID</th>
+      <th>Status</th>
+      <th>Job Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for job in jobs %}
+    <tr>
+      <td>{{ job.date }}</td>
+      <td>{{ job.company_uuid }}</td>
+      <td>{{ job.status }}</td>
+      <td>{{ job.job_description }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
