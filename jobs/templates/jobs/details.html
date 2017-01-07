@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% if request.user.username == job.company %}
 <div class="container">
   <div class="row">
     <div>&nbsp;</div>
@@ -22,4 +23,7 @@
     </div>
   </div>
 </div>
+{% else %}
+<h3 style="padding-top:30px;">You have no jobs.</h3>
+{% endif %}
 {% endblock %}
