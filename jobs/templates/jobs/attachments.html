@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {% for attachment in attachments %}
+        {% if attachment.related_object_uuid == a.job_id %}
+        {{ attachment }}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

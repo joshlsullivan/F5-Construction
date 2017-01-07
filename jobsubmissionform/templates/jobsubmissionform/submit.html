@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% load bootstrap3 %}
+<div class="container submit-form">
+  <div class="row">
+    <div class="page-header">
+      <h1>Job Submit Form<br><small>Please use this form to submit your job.</small></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form action="" method="post" class="form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+              <button type="submit" class="btn btn-primary">
+                  {% bootstrap_icon "star" %} Submit
+              </button>
+          {% endbuttons %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

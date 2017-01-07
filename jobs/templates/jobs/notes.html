@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {% for note in notes %}
+        {% if note.related_object_uuid == a.job_id %}
+        <ul class="list-group">
+          <li class="list-group-item">{{ note.note }}<br>{{ note.create_date }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
