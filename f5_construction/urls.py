@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^jobs/', include('jobs.urls')),
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),
-    url(r'^accounts/login/$', auth_views.login, {'template_name': 'login/login.html'}),
+    url(r'^accounts/login/$', auth_views.login),
 ]

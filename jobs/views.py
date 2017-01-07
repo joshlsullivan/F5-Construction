@@ -16,7 +16,7 @@ def get_job_detail(request, jobssubmitted_id):
     url = "https://api.servicem8.com/api_1.0/Job/{}.json".format(j.job_id)
     r = requests.get(url, auth=(settings.SERVICEM8_EMAIL, settings.SERVICEM8_PASSWORD))
     job = r.json()
-    return render(request, "jobs/details.html", {'job': job})
+    return render(request, "jobs/details.html", {'job': job, 'j':j})
 
 @login_required
 def get_job_note(request, jobssubmitted_id):

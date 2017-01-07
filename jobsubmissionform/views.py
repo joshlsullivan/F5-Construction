@@ -6,6 +6,7 @@ import json
 from django.contrib.auth.decorators import login_required
 from .forms import JobSubmissionForm
 from jobs.models import JobsSubmitted
+from django.conf import settings
 
 @login_required
 def submit_job(request):
