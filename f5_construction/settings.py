@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-LOGIN_REDIRECT_URL = '/submit'
+LOGIN_REDIRECT_URL = '/jobs'
 
 # Application definition
 

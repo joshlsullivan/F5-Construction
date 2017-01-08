@@ -19,7 +19,7 @@
     <![endif]-->
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#myPage">Logo</a>
+          <a class="navbar-brand" href="#myPage"><img src="https://s3-us-west-2.amazonaws.com/f5-construction/f5-logo.png" alt="F5 Logo" width="100px"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
@@ -37,18 +37,47 @@
             <li><a href="#portfolio">PORTFOLIO</a></li>
             <li><a href="#pricing">PRICING</a></li>
             <li><a href="#contact">CONTACT</a></li>
-            <li><a href="/submit">SUBMIT</a></li>
             <li><a href="/jobs">JOBS</a></li>
           </ul>
         </div>
       </div>
     </nav>
     {% block content %}{% endblock %}
-    <footer class="container-fluid text-center">
-      <a href="#myPage" title="To Top">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-      </a>
-      <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+    <div class="container-fluid">
+      <div class="row text-center">
+        <a href="#myPage" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Contact Info</h3>
+          <hr>
+          <p>F5 Construction<br>
+            Street<br>
+            City<br>
+            Phone<br>
+            Email</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Important Links</h3>
+          <hr>
+          <p>Submit Jobs</p>
+          <p>Jobs List</p>
+          <p>Privacy</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Social</h3>
+          <hr>
+          <p>Facebook</p>
+          <p>Instagram</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p>Copyright 2017 | Powered by <a href="https://magnolia.technology" target="_blank" alt="MIS">MIS</a></p>
+      </div>
     </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

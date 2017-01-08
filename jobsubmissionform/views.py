@@ -13,7 +13,8 @@ def submit_job(request):
     if request.method == 'POST':
         form = JobSubmissionForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
             email = form.cleaned_data['email']
             phone = form.cleaned_data['phone']
             job_description = form.cleaned_data['job_description']
@@ -24,13 +25,13 @@ def submit_job(request):
             payload = {
                 "status":"Quote",
                 "job_address":job_address,
-                "job_description":"{0} {1} {2} {3}".format(name, email, phone, job_description),
+                "job_description":"{0} {1} {2} {3}".format(first_name, last_name, email, phone, job_description),
                 "company_id":company,
             }
             r = requests.post(url, data=payload, auth=(settings.SERVICEM8_EMAIL, settings.SERVICEM8_PASSWORD))
-            j = JobsSubmitted(job_id=r.headers['x-record-uuid'], name=name, email=email, phone=phone, job_description=job_description, job_address=job_address, company=company, user=user)
+            j = JobsSubmitted(job_id=r.headers['x-record-uuid'], first_name=first_name, last_name=last_name, email=email, phone=phone, job_description=job_description, job_address=job_address, company=company, user=user)
             j.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/jobs')
     else:
         form = JobSubmissionForm()
     return render(request, 'jobsubmissionform/submit.html', {'form':form})

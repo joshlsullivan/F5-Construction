@@ -8,7 +8,8 @@ class JobsSubmitted(models.Model):
         on_delete=models.CASCADE,
     )
     job_id = models.CharField(max_length=120)
-    name = models.CharField(max_length=120)
+    first_name = models.CharField(max_length=80)
+    last_name = models.CharField(max_length=80)
     email = models.EmailField(max_length=254)
     phone = models.CharField(max_length=20)
     job_description = models.TextField()

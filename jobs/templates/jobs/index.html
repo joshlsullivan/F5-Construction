@@ -1,29 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container submit-form">
-  <div class="col-md-12">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Job ID</th>
-          <th>Job Description</th>
-          <th>Job Address</th>
-          <th>Attachments</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for job in jobs %}
-        {% if request.user.is_authenticated and request.user.username == job.company %}
-        <tr>
-          <td><a href="{% url 'jobs:detail' job.id %}">{{ job.job_id }}</a></td>
-          <td>{{ job.job_description }}</td>
-          <td>{{ job.job_address }}</td>
-          <td><a href="{% url 'jobs:note' job.id %}">Notes</a></td>
-        </tr>
-        {% endif %}
-        {% endfor %}
-      </tbody>
-    </table>
+<div class="container">
+  <div class="row jobs">
+    <div class="col-md-2 col-md-offset-10">
+      <a href="/submit"><button type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Job
+      </button></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Job ID</th>
+            <th>Job Description</th>
+            <th>Job Address</th>
+            <th>Attachments</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for job in jobs %}
+          {% if request.user.is_authenticated and request.user.username == job.company %}
+          <tr>
+            <td><a href="{% url 'jobs:detail' job.id %}">{{ job.job_id }}</a></td>
+            <td>{{ job.job_description }}</td>
+            <td>{{ job.job_address }}</td>
+            <td><a href="{% url 'jobs:note' job.id %}">Notes</a></td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 {% endblock %}
