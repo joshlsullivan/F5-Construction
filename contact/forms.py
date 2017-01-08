@@ -10,4 +10,4 @@ class ContactForm(forms.Form):
         name = self.cleaned_data['name']
         email = self.cleaned_data['email']
         message = self.cleaned_data['message']
-        send_mail('Website Inquiry from {}'.format(name), message, email, ['josh@magnolia.technology'], fail_silently=False)
+        send_mail('Website Inquiry from {}'.format(name), message, email, ['tim@f5.construction', 'robert@f5.construction'], fail_silently=False)
