@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{% load bootstrap3 %}
+<div class="container">
+  <div class="row">
+    <div class="page-header">
+      <h1>Contact Us<br><small>We would love to hear from you. Please use the form below to email us.</small></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <form action="" method="post" class="form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+              <button type="submit" class="btn btn-primary">
+                  {% bootstrap_icon "pencil" %} Submit
+              </button>
+          {% endbuttons %}
+      </form>
+    </div>
+    <div class="col-md-4">
+      <h3>What is your typical process for working with a new customer?</h3>
+      <p>We like to look at the job and ensure that the scope of work is accurate. We provide a no charge in home consultation, and there is never a fee for an estimate. With every project, we work with you every step of the way, and have a five (5) year craftsmanship warranty included on all of our work. Our production managers are on site daily to ensure top quality and make certain there are no surprises during the duration of your project. Home improvements are a very personal project to you and your family, and we treat them as if it was our own home.</p><br>
+      <a class="widget ng-scope" ng-href="https://www.thumbtack.com/-Austin-TX/service/2592473" target="_blank" href="https://www.thumbtack.com/-Austin-TX/service/2592473"> <img style="height: 192px;width: 192px;" ng-src="https://static.thumbtackstatic.com/media/pages/profile/standard-widgets/pro-svg/orange/2016.svg" src="https://static.thumbtackstatic.com/media/pages/profile/standard-widgets/pro-svg/orange/2016.svg"></a><script src='https://www.thumbtack.com/profile/widgets/scripts/?service_id=D6zmAk6QFW5RWQ&widget_id=profile'></script>
+  </div>
+</div>
+{% endblock %}

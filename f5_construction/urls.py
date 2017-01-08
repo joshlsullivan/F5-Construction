@@ -18,11 +18,13 @@ from django.contrib import admin
 from jobs import views
 from django.contrib.auth import views as auth_views
 from home.views import HomeView
+from contact.views import ContactView
 
 urlpatterns = [
     url(r'^$', HomeView.as_view()),
     url(r'^submit/', include('jobsubmissionform.urls')),
     url(r'^jobs/', include('jobs.urls')),
+    url(r'^contact/', ContactView.as_view()),
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),
     url(r'^accounts/login/$', auth_views.login),

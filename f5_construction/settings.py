@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'jobsubmissionform',
     'bootstrap3',
     'home',
+    'contact'
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,9 @@ DATABASES['default'].update(db_from_env)
 
 SERVICEM8_EMAIL = os.environ['SERVICEM8_EMAIL']
 SERVICEM8_PASSWORD = os.environ['SERVICEM8_PASSWORD']
+GOOGLE_MAPS_API = os.environ['GOOGLE_MAPS_API']
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

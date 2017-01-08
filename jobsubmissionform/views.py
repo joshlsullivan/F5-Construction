@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import JobSubmissionForm
 from jobs.models import JobsSubmitted
 from django.conf import settings
+from django.core.mail import send_mail
 
 @login_required
 def submit_job(request):
@@ -31,6 +32,13 @@ def submit_job(request):
             r = requests.post(url, data=payload, auth=(settings.SERVICEM8_EMAIL, settings.SERVICEM8_PASSWORD))
             j = JobsSubmitted(job_id=r.headers['x-record-uuid'], first_name=first_name, last_name=last_name, email=email, phone=phone, job_description=job_description, job_address=job_address, company=company, user=user)
             j.save()
+            email = EmailMessage(
+                'New Job Submission for {} {}'.format(first_name, last_name),
+                job_description,
+                'services@f5.construction',
+                [user.email,],
+                ['tim@f5.construction', 'robert@f5.construction'],
+            )
             return HttpResponseRedirect('/jobs')
     else:
         form = JobSubmissionForm()

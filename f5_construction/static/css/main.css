@@ -91,7 +91,7 @@ h4 {
     line-height: 1.375em;
     font-weight: 400;
     font-style: italic;
-    margin: 70px 0;
+    margin: 70px 110px;
 }
 .item span {
     font-style: normal;
@@ -218,4 +218,15 @@ footer .glyphicon {
 }
 .jobs {
   padding-top: 20px;
+}
+#map {
+  height: 400px;
+  width: 100%;
+}
+#home-tagline {
+  background: #f4511e;
+  color: #fff;
+  line-height: 125%;
+  padding: 50px 20px;
+  font-size: 30px;
 }

@@ -35,8 +35,8 @@
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#services">SERVICES</a></li>
             <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#pricing">PRICING</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <!--<li><a href="#pricing">PRICING</a></li>-->
+            <li><a href="/contact">CONTACT</a></li>
             <li><a href="/jobs">JOBS</a></li>
           </ul>
         </div>
@@ -44,20 +44,14 @@
     </nav>
     {% block content %}{% endblock %}
     <div class="container-fluid">
-      <div class="row text-center">
-        <a href="#myPage" title="To Top">
-          <span class="glyphicon glyphicon-chevron-up"></span>
-        </a>
-      </div>
       <div class="row">
         <div class="col-md-4">
           <h3>Contact Info</h3>
           <hr>
           <p>F5 Construction<br>
-            Street<br>
-            City<br>
-            Phone<br>
-            Email</p>
+            2328 A Hartford Rd.<br>
+            Austin, TX 78703<br>
+            512-924-3133</p>
         </div>
         <div class="col-md-4">
           <h3>Important Links</h3>
@@ -69,8 +63,8 @@
         <div class="col-md-4">
           <h3>Social</h3>
           <hr>
-          <p>Facebook</p>
-          <p>Instagram</p>
+          <p><a href="https://www.facebook.com/f5contractors" target="_blank" alt="Facebook">Facebook</a></p>
+          <a class="widget ng-scope" ng-href="https://www.thumbtack.com/-Austin-TX/service/2592473" target="_blank" href="https://www.thumbtack.com/-Austin-TX/service/2592473"> <img style="height: 128px;width: 128px;" ng-src="https://static.thumbtackstatic.com/media/pages/profile/standard-widgets/pro-svg/orange/2016.svg" src="https://static.thumbtackstatic.com/media/pages/profile/standard-widgets/pro-svg/orange/2016.svg"></a><script src='https://www.thumbtack.com/profile/widgets/scripts/?service_id=D6zmAk6QFW5RWQ&widget_id=profile'></script>
         </div>
       </div>
     </div>
@@ -84,6 +78,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-    <script src="{% static 'js/google_maps.js' %}"></script>
+    <script src="{% static 'js/google_map.js' %}"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmH9KLsoN8uV8ZYZaFiBnFX802s1MNBnE&callback=initMap">
+    </script>
   </body>
 </html>
