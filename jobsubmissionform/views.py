@@ -8,6 +8,7 @@ from .forms import JobSubmissionForm
 from jobs.models import JobsSubmitted
 from django.conf import settings
 from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 
 @login_required
 def submit_job(request):
